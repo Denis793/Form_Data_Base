@@ -37,17 +37,17 @@
 
         <div class="label-input-container">
           <label for="registerPassword">Пароль:</label>
-          <input type="password" id="registerPassword" required />
+          <input class="pass-input" type="password" id="registerPassword" required />
+          <span class="password-strength" id="password-strength">Слабкий пароль</span>
           <span class="toggle-password" data-target="registerPassword">&#128065;</span>
         </div>
 
         <div class="label-input-container">
           <label for="confirmPassword">Повторіть пароль:</label>
-          <input type="password" id="confirmPassword" required />
+          <input class="pass-input" type="password" id="confirmPassword" required />
           <span class="toggle-password" data-target="confirmPassword">&#128065;</span>
         </div>
 
-        <div id="password-strength" class="password-strength">Слабкий пароль</div>
         <button type="submit">Зареєструватись</button>
         <button type="button" id="generatePasswordBtn">Згенерувати пароль</button>
       </form>
@@ -62,7 +62,7 @@
 
         <div class="label-input-container">
           <label for="loginPassword">Пароль:</label>
-          <input type="password" id="loginPassword" required />
+          <input class="pass-input" type="password" id="loginPassword" required />
           <span class="toggle-password" data-target="loginPassword">&#128065;</span>
         </div>
 

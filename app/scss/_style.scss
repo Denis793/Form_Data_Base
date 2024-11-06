@@ -9,20 +9,17 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  margin-bottom: 10px;
 }
 
 .toggle-password {
   font-size: 28px;
   position: absolute;
   right: 24px;
-  top: 8px;
+  top: 9px;
   &:hover {
     color: $primary-color;
   }
-}
-
-.hidden {
-  display: none;
 }
 
 .success,
@@ -47,23 +44,27 @@
 .password-strength {
   display: none; /* Приховано за замовчуванням */
   margin: 12px 0 30px;
-  line-height: 30px;
+  line-height: 18px;
   height: 2px;
-  border-radius: 4px;
   transition: width 0.3s ease, background-color 0.3s ease;
+  position: absolute;
+  left: 51%;
+  bottom: -40%;
+  font-size: 0.7rem;
+  white-space: nowrap;
 }
 
 .password-strength[data-strength='weak'] {
-  width: 33%;
+  width: 15%;
   background-color: $error-color;
 }
 
 .password-strength[data-strength='medium'] {
-  width: 66%;
+  width: 30%;
   background-color: $medium-color;
 }
 
 .password-strength[data-strength='strong'] {
-  width: 100%;
-  background-color: $success-colorn;
+  width: 45%;
+  background-color: $success-color;
 }
