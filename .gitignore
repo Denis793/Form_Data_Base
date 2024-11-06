@@ -1,0 +1,33 @@
+# Ігноруємо папку з модулями Node.js
+node_modules/
+.history/
+.vscode/
+package-lock.json
+package.json
+
+# Ігноруємо скомпільовані CSS-файли, якщо вони генеруються автоматично
+#app/css/*.css
+
+# Ігноруємо кеш-файли та налаштування систем
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ігноруємо середовище IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Ігноруємо .env-файли, якщо є секретні дані
+.env
+.env.local
+.env.*.local
