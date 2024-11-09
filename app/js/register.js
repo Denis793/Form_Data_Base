@@ -1,4 +1,4 @@
-import { displayMessage } from './common.js';
+import { displayMessage, handleResponse } from './common.js';
 
 export function registerUser(event) {
   event.preventDefault();
@@ -17,7 +17,7 @@ export function registerUser(event) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, lastName, email, password }),
   })
-    .then((response) => response.json())
+    .then(handleResponse)
     .then((data) => displayMessage(data.message, 'success'))
     .catch((error) => displayMessage(error.message, 'error'));
 }

@@ -1,4 +1,4 @@
-import { displayMessage } from './common.js';
+import { displayMessage, handleResponse } from './common.js';
 
 export function loginUser(event) {
   event.preventDefault();
@@ -10,13 +10,9 @@ export function loginUser(event) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
   })
-    .then((response) => response.json())
+    .then(handleResponse)
     .then((data) => {
-      if (data.success) {
-        displayMessage(`Ласкаво просимо, ${data.user.name}!`, 'success');
-      } else {
-        displayMessage(data.message || 'Помилка авторизації', 'error');
-      }
+      displayMessage(`Ласкаво просимо, ${data.user.name}!`, 'success');
     })
     .catch((error) => displayMessage(error.message, 'error'));
 }
