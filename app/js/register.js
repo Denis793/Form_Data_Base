@@ -9,7 +9,7 @@ export function registerUser(event) {
   const confirmPassword = document.getElementById('confirmPassword').value;
 
   if (password !== confirmPassword) {
-    return displayMessage('Паролі не співпадають', 'error');
+    return displayMessage('Passwords do not match', 'error');
   }
 
   fetch('/register', {

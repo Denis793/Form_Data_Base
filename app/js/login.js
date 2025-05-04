@@ -12,7 +12,7 @@ export function loginUser(event) {
   })
     .then(handleResponse)
     .then((data) => {
-      displayMessage(`Ласкаво просимо, ${data.user.name}!`, 'success');
+      displayMessage(`Welcome, ${data.user.name}!`, 'success');
     })
     .catch((error) => displayMessage(error.message, 'error'));
 }

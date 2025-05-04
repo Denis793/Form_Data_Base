@@ -29,5 +29,5 @@ export function updatePasswordStrength() {
 
   strengthIndicator.dataset.strength = strength;
   strengthIndicator.textContent =
-    strength === 'strong' ? 'Висока надійність' : strength === 'medium' ? 'Середня надійність' : 'Слабкий пароль';
+    strength === 'strong' ? 'Strong password' : strength === 'medium' ? 'Medium strength' : 'Weak password';
 }

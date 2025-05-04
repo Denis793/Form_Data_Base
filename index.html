@@ -1,72 +1,72 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Реєстрація та Авторизація</title>
+    <title>Registration and Authorization</title>
     <link rel="stylesheet" href="./app/css/main.css" />
   </head>
   <body>
     <header>
-      <h1>Ласкаво просимо!</h1>
+      <h1>Welcome!</h1>
     </header>
 
     <div class="container">
       <div id="linkContainer">
-        <button id="showRegister">Зареєструватися</button>
-        <button id="showLogin">Авторизуватися</button>
+        <button id="showRegister">Register</button>
+        <button id="showLogin">Log In</button>
       </div>
 
       <form id="registerForm">
-        <h2>Реєстрація</h2>
+        <h2>Registration</h2>
 
         <div class="label-input-container">
-          <label for="name">Ім'я:</label>
+          <label for="name">First Name:</label>
           <input type="text" id="name" required />
         </div>
 
         <div class="label-input-container">
-          <label for="lastName">Прізвище:</label>
+          <label for="lastName">Last Name:</label>
           <input type="text" id="lastName" required />
         </div>
 
         <div class="label-input-container">
-          <label for="registerEmail">Електронна пошта:</label>
+          <label for="registerEmail">Email:</label>
           <input type="email" id="registerEmail" required />
         </div>
 
         <div class="label-input-container">
-          <label for="registerPassword">Пароль:</label>
+          <label for="registerPassword">Password:</label>
           <input class="pass-input" type="password" id="registerPassword" required />
-          <span class="password-strength" id="password-strength">Слабкий пароль</span>
+          <span class="password-strength" id="password-strength">Weak password</span>
           <span class="toggle-password" data-target="registerPassword">&#128065;</span>
         </div>
 
         <div class="label-input-container">
-          <label for="confirmPassword">Повторіть пароль:</label>
+          <label for="confirmPassword">Repeat password:</label>
           <input class="pass-input" type="password" id="confirmPassword" required />
           <span class="toggle-password" data-target="confirmPassword">&#128065;</span>
         </div>
 
-        <button type="submit">Зареєструватись</button>
-        <button type="button" id="generatePasswordBtn">Згенерувати пароль</button>
+        <button type="submit">Register</button>
+        <button type="button" id="generatePasswordBtn">Generate password</button>
       </form>
 
       <form id="loginForm" class="hidden">
-        <h2>Авторизація</h2>
+        <h2>Authorization</h2>
 
         <div class="label-input-container">
-          <label for="loginEmail">Електронна пошта:</label>
+          <label for="loginEmail">Email:</label>
           <input type="email" id="loginEmail" required />
         </div>
 
         <div class="label-input-container">
-          <label for="loginPassword">Пароль:</label>
+          <label for="loginPassword">Password:</label>
           <input class="pass-input" type="password" id="loginPassword" required />
           <span class="toggle-password" data-target="loginPassword">&#128065;</span>
         </div>
 
-        <button type="submit">Авторизуватися</button>
+        <button type="submit">Log In</button>
       </form>
 
       <div id="message" class="message"></div>
