@@ -17,5 +17,24 @@ export function initializePasswordToggle() {
     icon.addEventListener('mousedown', (e) => togglePasswordType(e, 'text'));
     icon.addEventListener('mouseup', (e) => togglePasswordType(e, 'password'));
     icon.addEventListener('mouseleave', (e) => togglePasswordType(e, 'password'));
+
+    // 👉 Додатково для мобільних:
+    icon.addEventListener(
+      'touchstart',
+      (e) => {
+        e.preventDefault(); // запобігти подвійним подіям
+        togglePasswordType(e, 'text');
+      },
+      { passive: false }
+    );
+
+    icon.addEventListener(
+      'touchend',
+      (e) => {
+        e.preventDefault();
+        togglePasswordType(e, 'password');
+      },
+      { passive: false }
+    );
   });
 }
