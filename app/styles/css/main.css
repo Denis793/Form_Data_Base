@@ -1,0 +1,285 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.4s;
+}
+
+body {
+  background-color: #f7f7f7;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+@media screen and (max-width: 1420px) {
+  h1 {
+    font-size: 2.7rem;
+  }
+}
+@media screen and (max-width: 940px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 240px) {
+  h1 {
+    font-size: 1rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+@media screen and (max-width: 1420px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 940px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  h2 {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  h2 {
+    padding: 1rem;
+  }
+}
+
+form,
+input,
+button {
+  padding: 12px 20px;
+  border: none;
+  margin: 10px;
+  box-shadow: 0 0 12px #ccc;
+  border-radius: 1.2rem;
+}
+
+button,
+span {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+form {
+  margin: 4rem;
+  padding: 4rem;
+  background-color: #fcfcfc;
+}
+@media screen and (max-width: 1420px) {
+  form {
+    margin: 3rem;
+  }
+}
+@media screen and (max-width: 940px) {
+  form {
+    margin: 2rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  form {
+    margin: 1.5rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  form {
+    margin: 1rem;
+    padding: 0rem;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 240px) {
+  form {
+    width: 80%;
+    font-size: 0.8rem;
+  }
+}
+
+input {
+  width: 15rem;
+}
+@media screen and (max-width: 640px) {
+  input {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 240px) {
+  input {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+button {
+  background-color: #9ecdff;
+  transition: 0.4s;
+  width: 40%;
+  white-space: nowrap;
+}
+button:hover {
+  background-color: #6bb3ff;
+}
+@media screen and (max-width: 640px) {
+  button {
+    width: 70%;
+    padding: 1.2rem;
+    margin: 0.5rem;
+  }
+}
+@media screen and (max-width: 240px) {
+  button {
+    font-size: 0.8rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 60%;
+  min-width: 240px;
+}
+@media screen and (max-width: 1420px) {
+  .container {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 940px) {
+  .container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 720px) {
+  .container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.label-input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 640px) {
+  .label-input-container {
+    flex-direction: column;
+  }
+}
+
+.eye-icon {
+  position: absolute;
+  right: 2rem;
+  font-size: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.success,
+.error {
+  padding: 20px;
+  color: #fff;
+  font-weight: bold;
+  width: 50%;
+  box-shadow: 0 0 12px #ccc;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.success {
+  background-color: #28a745;
+}
+
+.error {
+  background-color: #ff0000;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.pass-input {
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 1.2rem;
+  box-shadow: 0 0 12px #ccc;
+}
+
+.password-strength {
+  position: absolute;
+  left: 2rem;
+  right: 1rem;
+  bottom: 2px;
+  height: 4px;
+  border-radius: 2px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.password-strength[data-strength=weak] {
+  width: 25%;
+  background-color: #ff0000;
+}
+
+.password-strength[data-strength=medium] {
+  width: 50%;
+  background-color: #ffbb00;
+}
+
+.password-strength[data-strength=strong] {
+  width: 75%;
+  background-color: #28a745;
+}
+
+.hidden {
+  display: none;
+}

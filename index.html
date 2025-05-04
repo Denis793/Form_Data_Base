@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration and Authorization</title>
-    <link rel="stylesheet" href="./app/css/main.css" />
+    <link rel="stylesheet" href="./app/styles/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
-      <h1>Welcome!</h1>
+      <h1 class="main-title">Welcome!</h1>
     </header>
 
     <div class="container">
@@ -37,15 +41,23 @@
 
         <div class="label-input-container">
           <label for="registerPassword">Password:</label>
-          <input class="pass-input" type="password" id="registerPassword" required />
-          <span class="password-strength" id="password-strength">Weak password</span>
-          <span class="toggle-password" data-target="registerPassword">&#128065;</span>
+
+          <div class="input-container">
+            <div class="input-wrapper">
+              <input type="password" id="registerPassword" class="pass-input" required />
+              <div class="password-strength hidden" id="password-strength"></div>
+            </div>
+            <span class="eye-icon" data-target="registerPassword">👁</span>
+          </div>
         </div>
 
         <div class="label-input-container">
           <label for="confirmPassword">Repeat password:</label>
-          <input class="pass-input" type="password" id="confirmPassword" required />
-          <span class="toggle-password" data-target="confirmPassword">&#128065;</span>
+
+          <div class="input-container">
+            <input class="pass-input" type="password" id="confirmPassword" required />
+            <span class="eye-icon" data-target="confirmPassword">👁</span>
+          </div>
         </div>
 
         <button type="submit">Register</button>
@@ -62,8 +74,11 @@
 
         <div class="label-input-container">
           <label for="loginPassword">Password:</label>
-          <input class="pass-input" type="password" id="loginPassword" required />
-          <span class="toggle-password" data-target="loginPassword">&#128065;</span>
+
+          <div class="input-container">
+            <input class="pass-input" type="password" id="loginPassword" required />
+            <span class="eye-icon" data-target="loginPassword">👁</span>
+          </div>
         </div>
 
         <button type="submit">Log In</button>

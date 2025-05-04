@@ -1,33 +1,37 @@
 function checkPasswordStrength(password) {
-  const hasNumber = /\d/.test(password);
-  const hasLowercase = /[a-z]/.test(password);
-  const hasUppercase = /[A-Z]/.test(password);
-  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
-
-  let strength = 'weak';
-  if (password.length >= 10 && hasNumber && hasLowercase && hasUppercase && hasSpecialChar) {
-    strength = 'strong';
-  } else if (password.length >= 8 && (hasNumber || hasLowercase || hasUppercase || hasSpecialChar)) {
-    strength = 'medium';
+  if (!/^[A-Za-z0-9!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]*$/.test(password)) {
+    return 'weak';
   }
 
-  return strength;
+  const upper = (password.match(/[A-Z]/g) || []).length;
+  const digits = (password.match(/[0-9]/g) || []).length;
+  const special = (password.match(/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/g) || []).length;
+
+  if (/^[a-zA-Z]+$/.test(password) || /^\d+$/.test(password)) {
+    return 'weak';
+  }
+
+  if (upper >= 2 && special >= 2 && digits >= 2) return 'strong';
+  if (upper >= 1 && special >= 1) return 'medium';
+
+  return 'weak';
 }
 
 export function updatePasswordStrength() {
-  const password = document.getElementById('registerPassword').value;
+  const passwordInput = document.getElementById('registerPassword');
   const strengthIndicator = document.getElementById('password-strength');
 
-  if (password.length === 0) {
-    strengthIndicator.style.display = 'none';
-    strengthIndicator.textContent = '';
+  if (!passwordInput || !strengthIndicator) return;
+
+  const password = passwordInput.value.trim();
+  const isEmpty = password.length === 0;
+
+  strengthIndicator.classList.toggle('hidden', isEmpty);
+  if (isEmpty) {
+    strengthIndicator.removeAttribute('data-strength');
     return;
   }
 
-  strengthIndicator.style.display = 'block';
   const strength = checkPasswordStrength(password);
-
-  strengthIndicator.dataset.strength = strength;
-  strengthIndicator.textContent =
-    strength === 'strong' ? 'Strong password' : strength === 'medium' ? 'Medium strength' : 'Weak password';
+  strengthIndicator.setAttribute('data-strength', strength);
 }

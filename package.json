@@ -10,7 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.2"
   },
-  "description": ""
+  "description": "<p align=\"center\">\r   <a href=\"https://form-data-base.onrender.com/\" target=\"_blank\">\r     <img src=\"https://img.shields.io/badge/View%20Project-Click%20Here-blue?style=for-the-badge\" alt=\"View Project\">\r   </a>\r </p>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Denis793/Form_Data_Base.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Denis793/Form_Data_Base/issues"
+  },
+  "homepage": "https://github.com/Denis793/Form_Data_Base#readme"
 }

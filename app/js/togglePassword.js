@@ -1,19 +1,21 @@
-function showPasswordOnHold(event) {
-  const targetInputId = event.target.getAttribute('data-target');
-  const passwordInput = document.getElementById(targetInputId);
-  passwordInput.type = 'text';
-}
+import { updatePasswordStrength } from './passwordStrength.js';
 
-function hidePassword(event) {
+function togglePasswordType(event, type) {
   const targetInputId = event.target.getAttribute('data-target');
   const passwordInput = document.getElementById(targetInputId);
-  passwordInput.type = 'password';
+  if (!passwordInput) return;
+
+  passwordInput.type = type;
+
+  if (targetInputId === 'registerPassword') {
+    updatePasswordStrength();
+  }
 }
 
 export function initializePasswordToggle() {
-  document.querySelectorAll('.toggle-password').forEach((icon) => {
-    icon.addEventListener('mousedown', showPasswordOnHold);
-    icon.addEventListener('mouseup', hidePassword);
-    icon.addEventListener('mouseleave', hidePassword);
+  document.querySelectorAll('.eye-icon').forEach((icon) => {
+    icon.addEventListener('mousedown', (e) => togglePasswordType(e, 'text'));
+    icon.addEventListener('mouseup', (e) => togglePasswordType(e, 'password'));
+    icon.addEventListener('mouseleave', (e) => togglePasswordType(e, 'password'));
   });
 }

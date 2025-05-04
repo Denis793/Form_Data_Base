@@ -10,7 +10,7 @@ export function displayMessage(msg, type = 'success') {
   const messageDiv = document.getElementById('message');
   messageDiv.innerText = msg;
   messageDiv.className = `message ${type}`;
-  messageDiv.style.display = 'block';
+  messageDiv.classList.remove('hidden');
 }
 
 // Function to handle server response
