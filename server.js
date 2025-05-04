@@ -2,14 +2,21 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const usersFilePath = path.join(__dirname, './app/data/users.json');
+
+// Перевіряємо чи існує файл, якщо ні — створюємо
+if (!fs.existsSync(usersFilePath)) {
+  fs.mkdirSync(path.dirname(usersFilePath), { recursive: true });
+  fs.writeFileSync(usersFilePath, '[]');
+}
+
 app.post('/register', (req, res) => {
   const newUser = req.body;
-  const usersFilePath = path.join(__dirname, './app/data/users.json');
 
   fs.readFile(usersFilePath, 'utf-8', (err, data) => {
     if (err) return res.status(500).json({ message: 'Помилка сервера' });
@@ -31,7 +38,6 @@ app.post('/register', (req, res) => {
 
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
-  const usersFilePath = path.join(__dirname, './app/data/users.json');
 
   fs.readFile(usersFilePath, 'utf-8', (err, data) => {
     if (err) return res.status(500).json({ message: 'Помилка сервера' });
