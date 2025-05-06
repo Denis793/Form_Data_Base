@@ -21,7 +21,6 @@ A simple user management project built with **Node.js** and **Express** that all
 - Node.js
 - Express.js
 - JSON file storage (no database)
-- Postman or frontend fetch for API testing
 
 ---
 
